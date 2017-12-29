@@ -22,3 +22,5 @@ shell-server@0.3.0            # Server-side component of the `meteor shell` comm
 #static-html                   # Replacing blaze-html-templates by Static HTML
 
 react-meteor-data             # Using meteor data into React (withTracker etc...)
+accounts-base                 # basic users accounts func. packages
+accounts-password             # password for users accounts
