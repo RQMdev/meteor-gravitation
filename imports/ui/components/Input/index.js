@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const Input = ({id, type, onChange}) => {
   const handleOnChange = (e) => {
@@ -12,10 +13,10 @@ const Input = ({id, type, onChange}) => {
   )
 }
 
-// Input.propTypes = {
-//   id: React.propTypes.string.isRequired,
-//   type: React.propTypes.string.isRequired,
-//   onChange: React.propTypes.func.isRequired
-// }
+Input.propTypes = {
+  id: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired
+}
 
 export default Input
