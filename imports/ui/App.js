@@ -1,9 +1,14 @@
 import React from 'react'
 
+import SignUp from './pages/SignUp'
+
 export default class App extends React.Component {
   render() {
     return (
-      <h1>App's Here !!</h1>
+      <div>
+        <h1>App's Here !!</h1>
+        <SignUp />
+      </div>
     )
   }
 }
