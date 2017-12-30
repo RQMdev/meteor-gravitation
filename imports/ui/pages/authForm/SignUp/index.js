@@ -34,6 +34,7 @@ export default class SignUp extends React.Component {
 
     return (
       <form onSubmit={this.handleSubmit} style={styles.form}>
+        <h2>Sign Up</h2>
         { !!error &&
           <DisplayError message={error} />
         }
@@ -57,7 +58,7 @@ export default class SignUp extends React.Component {
           type="password"
           onChange={confirmation => this.setState({confirmation})}
         />
-        <input type="submit" value="Sign Up"/>
+        <input style={styles.submit} type="submit" value="Sign Up"/>
       </form>
     )
   }

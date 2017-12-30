@@ -1,12 +1,14 @@
 import React from 'react'
+
 import { AuthService } from '../../../services/AuthService'
+import { styles } from './styles'
 
 const LogOutButton = () => {
   const logOut = () => {
     Meteor.logout(AuthService.callback)
   }
   return (
-    <button className="log-out" onClick={logOut}>Log Out</button>
+    <button style={styles} onClick={logOut}>Log Out</button>
   )
 }
 

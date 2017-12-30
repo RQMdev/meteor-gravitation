@@ -29,6 +29,7 @@ export default class SignIn extends React.Component {
 
     return (
       <form onSubmit={this.handleSubmit} style={styles.form}>
+        <h2>Sign In</h2>
         { !!error &&
           <DisplayError message={error} />
         }
@@ -42,7 +43,7 @@ export default class SignIn extends React.Component {
           type="password"
           onChange={password => this.setState({password})}
         />
-        <input type="submit" value="Sign In"/>
+        <input style={styles.submit} type="submit" value="Sign In"/>
       </form>
     )
   }

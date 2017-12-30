@@ -11,7 +11,6 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Gravitation</h1>
         { !!this.props.currentUser &&
           <div>
             <LogOutButton />
@@ -20,10 +19,8 @@ class App extends React.Component {
         }
         { !this.props.currentUser &&
           <div>
-            <h2>Sign Up</h2>
-            <SignUp />
-            <h2>Sign In</h2>
             <SignIn />
+            <SignUp />
           </div>
         }
       </div>
