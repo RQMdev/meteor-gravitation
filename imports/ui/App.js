@@ -3,8 +3,8 @@ import { Meteor } from 'meteor/meteor'
 import { withTracker } from 'meteor/react-meteor-data'
 
 import LogOutButton from './components/LogOutButton'
-import SignUp from './pages/SignUp'
-import SignIn from './pages/SignIn'
+import SignUp from './pages/authForm/SignUp'
+import SignIn from './pages/authForm/SignIn'
 
 class App extends React.Component {
   render() {
