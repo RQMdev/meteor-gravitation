@@ -5,6 +5,8 @@ import Input from '../../components/Input'
 import DisplayError from '../../components/DisplayError'
 import { AuthService } from '../../../services/AuthService'
 
+import { styles } from './styles'
+
 export default class SignUp extends React.Component {
   constructor(props){
     super(props)
@@ -31,7 +33,7 @@ export default class SignUp extends React.Component {
     const error = this.state.error
 
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} style={styles.form}>
         { !!error &&
           <DisplayError message={error} />
         }

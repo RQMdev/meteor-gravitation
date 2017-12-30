@@ -11,14 +11,18 @@ class App extends React.Component {
 
     return (
       <div>
-        <h1>App's Here !!</h1>
+        <h1>Gravitation</h1>
         { !!this.props.currentUser &&
           <LogOutButton />
         }
-        <h2>Sign Up</h2>
-        <SignUp />
-        <h2>Sign In</h2>
-        <SignIn />
+        { !this.props.currentUser &&
+          <div>
+            <h2>Sign Up</h2>
+            <SignUp />
+            <h2>Sign In</h2>
+            <SignIn />
+          </div>
+        }
       </div>
     )
   }
