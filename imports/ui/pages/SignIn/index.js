@@ -1,11 +1,11 @@
 import React from 'react'
-import { Accounts } from 'meteor/accounts-base'
+import { Meteor } from 'meteor/meteor'
 
 import Input from '../../components/Input'
 import DisplayError from '../../components/DisplayError'
 import { AuthService } from '../../../services/AuthService'
 
-export default class SignUp extends React.Component {
+export default class SignIn extends React.Component {
   constructor(props){
     super(props)
     this.state = {
@@ -17,14 +17,9 @@ export default class SignUp extends React.Component {
 
   handleSubmit(e){
     e.preventDefault()
-    const equalPwd = this.state.password === this.state.confirmation
-    if (!equalPwd) return this.setState({error: "Passwords don't match."})
-    const options = {
-      username: this.state.username,
-      email: this.state.email,
-      password: this.state.password
-    }
-    Accounts.createUser(options, AuthService.callback)
+    const username = this.state.username,
+          password = this.state.password
+    Meteor.loginWithPassword(username, password, AuthService.callback)
   }
 
   render() {
@@ -41,21 +36,11 @@ export default class SignUp extends React.Component {
           onChange={username => this.setState({username})}
         />
         <Input
-          id="email"
-          type="text"
-          onChange={email => this.setState({email})}
-        />
-        <Input
           id="password"
           type="password"
           onChange={password => this.setState({password})}
         />
-        <Input
-          id="confirmation"
-          type="password"
-          onChange={confirmation => this.setState({confirmation})}
-        />
-        <input type="submit" value="Sign Up"/>
+        <input type="submit" value="Sign In"/>
       </form>
     )
   }
