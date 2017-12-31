@@ -1,13 +1,15 @@
 import React from 'react'
 import { Accounts } from 'meteor/accounts-base'
+import { withRouter } from 'react-router-dom'
 
 import Input from '../../../components/Input'
 import DisplayError from '../../../components/DisplayError'
+import FormSubmit from '../../../components/FormSubmit'
 import { AuthService } from '../../../../services/AuthService'
 
 import { styles } from '../styles'
 
-export default class SignUp extends React.Component {
+class SignUp extends React.Component {
   constructor(props){
     super(props)
     this.state = {
@@ -34,7 +36,6 @@ export default class SignUp extends React.Component {
 
     return (
       <form onSubmit={this.handleSubmit} style={styles.form}>
-        <h2>Sign Up</h2>
         { !!error &&
           <DisplayError message={error} />
         }
@@ -58,8 +59,10 @@ export default class SignUp extends React.Component {
           type="password"
           onChange={confirmation => this.setState({confirmation})}
         />
-        <input style={styles.submit} type="submit" value="Sign Up"/>
+        <FormSubmit />
       </form>
     )
   }
 }
+
+export default withRouter(SignUp)

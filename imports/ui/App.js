@@ -1,9 +1,12 @@
 import React from 'react'
 import { Meteor } from 'meteor/meteor'
 import { withTracker } from 'meteor/react-meteor-data'
+import { Switch, Route } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import LogOutButton from './components/LogOutButton'
 import UsersOnline from './components/UsersOnline'
+import AuthNav from './pages/authForm/AuthNav'
 import SignUp from './pages/authForm/SignUp'
 import SignIn from './pages/authForm/SignIn'
 
@@ -19,8 +22,11 @@ class App extends React.Component {
         }
         { !this.props.currentUser &&
           <div>
-            <SignIn />
-            <SignUp />
+          <AuthNav />
+            <Switch>
+              <Route exact path="/" component={SignIn}/>
+              <Route path="/signup" component={SignUp}/>
+            </Switch>
           </div>
         }
       </div>
