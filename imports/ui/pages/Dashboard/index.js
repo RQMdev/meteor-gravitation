@@ -1,16 +1,29 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Route, NavLink } from 'react-router-dom'
 
 import LogOutButton from '../../components/LogOutButton'
 import UsersOnline from '../../components/UsersOnline'
+import Game from '../../components/Game'
+import { styles } from './styles'
 
 const Dashboard = () => (
   <div>
     <nav>
       <LogOutButton />
-      <Link to="">Play</Link>
+      <NavLink
+        exact
+        to="/"
+        style={styles.link}
+        activeStyle={styles.active}
+      >Users Online</NavLink>
+      <NavLink
+        to="/game"
+        style={styles.link}
+        activeStyle={styles.active}
+      >Play</NavLink>
     </nav>
-    <UsersOnline />
+    <Route path="/game" component={Game} />
+    <Route exact path="/" component={UsersOnline} />
   </div>
 )
 
