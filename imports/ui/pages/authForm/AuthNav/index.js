@@ -1,21 +1,19 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
 
+import CustomNavLink from '../../../components/CustomNavLink'
 import { styles } from './styles'
 
 const AuthNav = () => (
   <nav style={styles.nav}>
-    <NavLink
-      exact
+    <CustomNavLink
+      exact={true}
       to="/"
-      style={styles.link}
-      activeStyle={styles.active}
-    >Sign In</NavLink>
-    <NavLink
+      label="Sign In"
+    />
+    <CustomNavLink
       to="/signup"
-      style={styles.link}
-      activeStyle={styles.active}
-    >Sign Up</NavLink>
+      label="Sign Up"
+    />
   </nav>
 );
 

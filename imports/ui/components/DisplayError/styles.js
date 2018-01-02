@@ -1,7 +1,9 @@
+import { stylesVar } from '../../stylesVar'
+
 export const styles = {
-  backgroundColor: '#ad2020',
-  color: 'white',
-  padding: '0.3rem 1rem',
-  margin: '0.3rem',
-  borderRadius: '5px'
+  backgroundColor: stylesVar.errorColor,
+  color: stylesVar.whiteText,
+  padding: stylesVar.defaultPadding,
+  margin: stylesVar.defaultMargin,
+  borderRadius: stylesVar.defaultBorderRadius,
 }

@@ -3,24 +3,24 @@ import { Route, NavLink } from 'react-router-dom'
 
 import LogOutButton from '../../components/LogOutButton'
 import UsersOnline from '../../components/UsersOnline'
+import CustomNavLink from '../../components/CustomNavLink'
 import Game from '../../components/Game'
+
 import { styles } from './styles'
 
 const Dashboard = () => (
   <div>
-    <nav>
+    <nav style={styles.nav}>
       <LogOutButton />
-      <NavLink
-        exact
+      <CustomNavLink
+        exact={true}
         to="/"
-        style={styles.link}
-        activeStyle={styles.active}
-      >Users Online</NavLink>
-      <NavLink
+        label="Users Online"
+      />
+      <CustomNavLink
         to="/game"
-        style={styles.link}
-        activeStyle={styles.active}
-      >Play</NavLink>
+        label="Play"
+      />
     </nav>
     <Route path="/game" component={Game} />
     <Route exact path="/" component={UsersOnline} />

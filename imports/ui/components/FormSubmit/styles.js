@@ -1,10 +1,12 @@
+import { stylesVar } from '../../stylesVar'
+
 export const styles = {
-  margin: '0.3rem',
-  padding: '0.5rem 1rem',
-  borderRadius: '5px',
+  margin: stylesVar.defaultMargin,
+  padding: stylesVar.defaultPadding,
+  borderRadius: stylesVar.defaultBorderRadius,
   border: '0px',
-  backgroundColor: '#20ad91',
-  color: 'white',
+  backgroundColor: stylesVar.primaryColor,
+  color: stylesVar.whiteText,
   fontSize: '1rem',
-  letterSpacing: '2px'
+  letterSpacing: stylesVar.defaultLetterSpacing,
 }

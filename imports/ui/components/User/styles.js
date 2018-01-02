@@ -1,7 +1,9 @@
+import { stylesVar } from '../../stylesVar'
+
 export const styles = {
   wrapper: {
-    margin: '0.3rem',
-    padding: '0.3rem 1rem'
+    margin: stylesVar.defaultMargin,
+    padding: stylesVar.defaultPadding,
   },
   username: {
     fontSize: '2rem'
