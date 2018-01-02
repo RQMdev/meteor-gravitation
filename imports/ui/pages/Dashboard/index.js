@@ -4,7 +4,7 @@ import { Route, NavLink } from 'react-router-dom'
 import LogOutButton from '../../components/LogOutButton'
 import UsersOnline from '../../components/UsersOnline'
 import CustomNavLink from '../../components/CustomNavLink'
-import Game from '../../components/Game'
+import GameWindow from '../../components/GameWindow'
 
 import { styles } from './styles'
 
@@ -22,7 +22,7 @@ const Dashboard = () => (
         label="Play"
       />
     </nav>
-    <Route path="/game" component={Game} />
+    <Route path="/game" component={GameWindow} />
     <Route exact path="/" component={UsersOnline} />
   </div>
 )
