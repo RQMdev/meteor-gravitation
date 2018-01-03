@@ -9,7 +9,6 @@ import { styles } from './styles'
 
 const Dashboard = ({switchGameVisible}) => (
   <div>
-    {console.log(switchGameVisible)}
     <nav style={styles.nav}>
       <Button label="Log Out" onClick={Meteor.logout} />
       <Button label="Play" onClick={switchGameVisible} />

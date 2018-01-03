@@ -9,7 +9,6 @@
     "bcrypt": "^1.0.3",
     "history": "^4.7.2",
     "meteor-node-stubs": "^0.3.2",
-    "phaser": "^3.0.0-beta.14",
     "phaser-ce": "^2.9.4",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",

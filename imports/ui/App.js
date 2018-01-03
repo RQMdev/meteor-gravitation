@@ -31,6 +31,7 @@ class App extends React.Component {
           ) : (
             <AuthContainer />
           )}
+
         <GameWindow visible={this.state.gameVisible} />
       </div>
     )
