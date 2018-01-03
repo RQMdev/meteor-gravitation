@@ -1,29 +1,20 @@
 import React from 'react'
 import { Route, NavLink } from 'react-router-dom'
 
-import LogOutButton from '../../components/LogOutButton'
+import Button from '../../components/Button'
 import UsersOnline from '../../components/UsersOnline'
 import CustomNavLink from '../../components/CustomNavLink'
-import GameWindow from '../../components/GameWindow'
 
 import { styles } from './styles'
 
-const Dashboard = () => (
+const Dashboard = ({switchGameVisible}) => (
   <div>
+    {console.log(switchGameVisible)}
     <nav style={styles.nav}>
-      <LogOutButton />
-      <CustomNavLink
-        exact={true}
-        to="/"
-        label="Users Online"
-      />
-      <CustomNavLink
-        to="/game"
-        label="Play"
-      />
+      <Button label="Log Out" onClick={Meteor.logout} />
+      <Button label="Play" onClick={switchGameVisible} />
     </nav>
-    <Route path="/game" component={GameWindow} />
-    <Route exact path="/" component={UsersOnline} />
+    <UsersOnline />
   </div>
 )
 

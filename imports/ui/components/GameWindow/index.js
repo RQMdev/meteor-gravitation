@@ -1,20 +1,29 @@
 import React from 'react'
-import Phaser from 'phaser'
 
-// global.PIXI = require('phaser-ce/build/custom/pixi')
-// global.p2 = require('phaser-ce/build/custom/p2')
-// global.Phaser = require('phaser-ce')
-// global.GAME = null;
-// // import Game from '../../../phaser/Game'
-// 	if (typeof global.GAME !== undefined) {
-// 		global.GAME = new Phaser.Game(500, 500, Phaser.AUTO, 'game-window', null)
-// 	}
-//
-const GameWindow = () => {
-	const GAME = new Phaser.Game(500, 500, Phaser.AUTO, 'game-window', null)
+import Game from '../../../phaser/Game'
 
-	return <div id="game-window">Game!</div>
+class GameWindow extends React.Component {
+	constructor(props){
+		super(props)
+	}
+
+	componentDidMount() {
+		this.GAME = new Game()
+	}
+
+	componentWillUnmout() {
+		this.GAME = undefined;
+	}
+
+	render() {
+		let visible = this.props.visible;
+		let style = {};
+		style = visible ? {display: 'block'} : {display: 'none'}
+
+		return (
+			<div id="game-window" style={style}></div>
+		);
+	}
 }
-
 
 export default GameWindow
