@@ -3,16 +3,20 @@ global.p2 = require('phaser-ce/build/custom/p2')
 global.Phaser = require('phaser-ce')
 
 class Boot extends Phaser.State {
+	constructor(){
+		super()
+	}
 	init() {
 	}
 
 	preload(){
-		console.log('boot.preload() called!')
-		this.load.image('bg', 'meteor://imports/assets/img/debug-grid-1920x1920.png')
+		this.load.image('bg', 'sprites/debug-bg.png')
+		this.load.image('ship', 'sprites/ship.png')
 	}
 
 	create(){
-		this.background = this.add.tileSprite(0, 0, 1920, 1920, 'bg')
+		this.physics.startSystem(Phaser.Physics.ARCADE);
+		this.state.start('Play')
 	}
 }
 
