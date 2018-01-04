@@ -3,6 +3,8 @@ import { Meteor } from 'meteor/meteor'
 import { withTracker } from 'meteor/react-meteor-data'
 import { Route } from 'react-router-dom'
 
+import Game from '../phaser/Game'
+
 import GameWindow from './components/GameWindow'
 
 import Dashboard from './pages/Dashboard'
@@ -23,6 +25,13 @@ class App extends React.Component {
     });
   }
 
+  componentDidMount(){
+    console.log(this.props.games)
+    if (this.props.games){
+
+    }
+  }
+
   render() {
     return (
       <div>
@@ -30,7 +39,8 @@ class App extends React.Component {
             <Dashboard switchGameVisible={this.switchGameVisible} />
           ) : (
             <AuthContainer />
-          )}
+          )
+        }
 
         <GameWindow visible={this.state.gameVisible} />
       </div>
@@ -39,7 +49,9 @@ class App extends React.Component {
 }
 
 export default withTracker(() => {
+  Meteor.subscribe('games')
   return {
-    currentUser: Meteor.user()
+    games: Games.find().fetch(),
+    currentUser: Meteor.user(),
   }
 })(App)

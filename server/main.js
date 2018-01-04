@@ -1,8 +1,10 @@
 import { Meteor } from 'meteor/meteor'
 // import
+import Games from '../imports/api/collections/Games'
 
 Meteor.startup(() => {
   // code to run on server at startup
+  Games.remove({})
 });
 
 // Users Publication
