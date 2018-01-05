@@ -3,6 +3,8 @@ import { Meteor } from 'meteor/meteor'
 import { withTracker } from 'meteor/react-meteor-data'
 import { Route } from 'react-router-dom'
 
+import Games from '../api/collections/Games'
+
 import Game from '../phaser/Game'
 
 import GameWindow from './components/GameWindow'
@@ -23,13 +25,6 @@ class App extends React.Component {
     this.setState(function(){
       return {gameVisible: !this.state.gameVisible}
     });
-  }
-
-  componentDidMount(){
-    console.log(this.props.games)
-    if (this.props.games){
-
-    }
   }
 
   render() {
