@@ -1,4 +1,7 @@
+import { Meteor } from 'meteor/meteor'
 import { Mongo } from 'meteor/mongo'
+
+import Game from '../../phaser/Game'
 
 export default Games = new Mongo.Collection('games')
 
