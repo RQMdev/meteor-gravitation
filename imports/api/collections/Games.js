@@ -2,7 +2,7 @@ import { Mongo } from 'meteor/mongo'
 
 export default Games = new Mongo.Collection('games')
 
-if (Meteor.isClient){
+if (Meteor.isServer){
 	Meteor.publish('games', () => Games.find({}))
 }
 
