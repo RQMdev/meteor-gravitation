@@ -26,3 +26,4 @@ shell-server@0.3.0            # Server-side component of the `meteor shell` comm
 react-meteor-data             # Using meteor data into React (withTracker etc...)
 accounts-password             # password for users accounts
 mizzao:user-status            # See who's online
+deanius:promise               # Promise wrapper for Meteor.call and more

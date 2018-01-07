@@ -3,10 +3,9 @@ import { Meteor } from 'meteor/meteor'
 import { withTracker } from 'meteor/react-meteor-data'
 import { Route } from 'react-router-dom'
 
+import Games from '../api/collections/Games'
 import Game from '../phaser/Game'
-
 import GameWindow from './components/GameWindow'
-
 import Dashboard from './pages/Dashboard'
 import AuthContainer from './pages/authForm/AuthContainer'
 
@@ -19,17 +18,15 @@ class App extends React.Component {
     this.switchGameVisible = this.switchGameVisible.bind(this)
   }
 
-  switchGameVisible() {
-    this.setState(function(){
+  async switchGameVisible() {
+    await this.setState(function(){
       return {gameVisible: !this.state.gameVisible}
     });
-  }
-
-  componentDidMount(){
-    console.log(this.props.games)
-    if (this.props.games){
-
-    }
+    const gameId = await Meteor.callPromise('Games.create')
+    this.state.gameVisible ?
+    Meteor.call('Games.newPlayer', gameId)
+    :
+    Meteor.call('Games.removePlayer', gameId);
   }
 
   render() {

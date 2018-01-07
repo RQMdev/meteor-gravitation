@@ -3,7 +3,7 @@ import { Meteor } from 'meteor/meteor'
 import Games from '../imports/api/collections/Games'
 
 Meteor.startup(() => {
-  // code to run on server at startup
+  // Delete old instances of Games
   Games.remove({})
 });
 

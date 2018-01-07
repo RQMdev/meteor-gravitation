@@ -21,6 +21,10 @@ class Play extends Phaser.State {
 		// Group
 		this.players = this.add.group()
 		// Players Generations
+
+	}
+
+	addPlayer(){
 		this.player = new Player({
 			game: this.game,
 			x: 300,
