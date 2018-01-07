@@ -8,16 +8,15 @@ class GameWindow extends React.Component {
 		super(props)
 	}
 
-	componentDidMount(){
-		// Create the GAME INSTANCE
-
-		this.GAME = new Game()
-	}
-
-	componentWillUnmount(){
-		// Destroy the GAME INSTANCE
-		this.GAME = null
-	}
+	// componentDidMount(){
+	// 	// Create the GAME INSTANCE
+	// 	this.GAME = new Game()
+	// }
+	// 
+	// componentWillUnmount(){
+	// 	// Destroy the GAME INSTANCE
+	// 	this.GAME = null
+	// }
 
 	render(){
 		let visible = this.props.visible
