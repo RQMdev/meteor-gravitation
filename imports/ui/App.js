@@ -29,6 +29,13 @@ class App extends React.Component {
     Meteor.call('Games.removePlayer', gameId);
   }
 
+  componentDidMount(){
+    console.log(this.props.games)
+    if (this.props.games){
+
+    }
+  }
+
   render() {
     return (
       <div>

@@ -1,11 +1,8 @@
-import { Meteor } from 'meteor/meteor'
 import { Mongo } from 'meteor/mongo'
-
-import Game from '../../phaser/Game'
 
 export default Games = new Mongo.Collection('games')
 
-if (Meteor.isServer){
+if (Meteor.isClient){
 	Meteor.publish('games', () => Games.find({}))
 }
 
